@@ -1,4 +1,4 @@
-\documentclass[9pt,twocolumn,twoside,lineno]{pnas-new}
+\documentclass[9pt,twocolumn,twoside]{pnas-new}
 % Use the lineno option to display guide line numbers if required.
 % Note that the use of elements such as single-column equations
 % may affect the guide line number alignment. 
@@ -96,6 +96,13 @@ Prior to submission, authors who believe their manuscripts would benefit from pr
 \label{fig:frog}
 \end{figure}
 
+
+\begin{SCfigure*}[\sidecaptionrelwidth][t]
+\centering
+\includegraphics[width=11.4cm,height=11.4cm]{frog}
+\caption{This caption would be placed at the side of the figure, rather than below it.}\label{fig:side}
+\end{SCfigure*}
+
 \subsection*{Digital Figures}
 \label{sec:figures}
 
@@ -103,7 +110,7 @@ Only TIFF, EPS, and high-resolution PDF for Mac or PC are allowed for figures th
 
 Figures and Tables should be labelled and referenced in the standard way using the \verb|\label{}| and \verb|\ref{}| commands.
 
-Figure \ref{fig:frog} shows an example of how to insert a column-wide figure. To insert a figure wider than one column, please use the \verb|\begin{figure*}...\end{figure*}| environment. Figures wider than one column should be sized to 11.4 cm or 17.8 cm wide.
+Figure \ref{fig:frog} shows an example of how to insert a column-wide figure. To insert a figure wider than one column, please use the \verb|\begin{figure*}...\end{figure*}| environment. Figures wider than one column should be sized to 11.4 cm or 17.8 cm wide. Use \verb|\begin{SCfigure*}...\end{SCfigure*}| for a wide figure with side captions.
 
 \subsection*{Single column equations}
 
@@ -179,16 +186,17 @@ PNAS prefers that authors submit individual source files to ensure readability. 
 Example text for subsection.
 }
 
-\showmatmethods % Display the Materials and Methods section
+\showmatmethods{} % Display the Materials and Methods section
 
 \acknow{Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.}
 
-\showacknow % Display the acknowledgments section
+\showacknow{} % Display the acknowledgments section
 
 % \pnasbreak splits and balances the columns before the references.
-% If you see unexpected formatting errors, try commenting out this line
+% Uncomment \pnasbreak to view the references in the PNAS-style
+% If you see unexpected formatting errors, try commenting out \pnasbreak
 % as it can run into problems with floats and footnotes on the final page.
-\pnasbreak
+%\pnasbreak
 
 % Bibliography
 \bibliography{pnas-sample}
