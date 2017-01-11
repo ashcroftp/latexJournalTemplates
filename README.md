@@ -14,3 +14,5 @@ These include:
 	+ General submission template for all PLoS journals
 
 * BMC -- http://www.springeropen.com/authors/tex
+
+* Springer -- http://www.springeropen.com/authors/tex
