@@ -19,3 +19,13 @@ These include:
 
 
 I have also included the [University of Manchester PhD thesis template](https://github.com/ashcroftp/latexJournalTemplates/tree/master/UoMthesis), which I used for my 2015 PhD thesis.
+
+
+Finally, I have included some useful latex [documents/shortcuts](https://github.com/ashcroftp/latexJournalTemplates/tree/master/zz-other).
+These include:
+
+* [preamble.tex](https://github.com/ashcroftp/latexJournalTemplates/tree/master/zz-other/preamble.tex) -- a set of commonly used macros, mainly for mathematical notation.
+
+* [supplement.tex](https://github.com/ashcroftp/latexJournalTemplates/tree/master/zz-other/supplement.tex) -- code block which resets all equation/section/figure/reference numbers and prepends with an 'S'.
+This is for compiling a single doument of manuscript and supplemental information (SI).
+Very useful for arXiv submissions. 

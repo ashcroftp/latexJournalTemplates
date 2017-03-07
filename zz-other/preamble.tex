@@ -1,0 +1,89 @@
+% Brackets
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+
+% Vectors (bold)
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+
+% Matrices (blackboard style)
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbW}{\mathbb{W}}
+
+% Caligraphic
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cL}{\mathcal{L}} 
+\newcommand{\order}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\e}[1]{\mathcal{E}^{(#1)}}
+
+
+% Roman
+\newcommand{\dd}{{\rm d}}
+\newcommand{\DD}{{\rm D}}
+\newcommand{\mix}{{\rm mix}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\newcommand{\Prob}{{\rm Pr}}
+\newcommand{\eff}{{\rm eff}}
+\newcommand{\st}{{\rm st}}
+
+% Overline
+\newcommand{\fbar}{\overline{f}}
+\newcommand{\rbar}{\overline{r}}
+
+% Hats
+\newcommand{\fhat}{\widehat{f}}
+\newcommand{\ghat}{\widehat{g}}
+\newcommand{\phat}{\widehat{p}}
+\newcommand{\vphat}{\widehat{\vec{p}}}
+\newcommand{\Phat}{\widehat{P}}
+
+
+% Differentials
+\newcommand{\grad}{\vec{\nabla}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppd}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+% Time-steps
+\newcommand{\Dt}{\Delta t}
+
+% Space savers
+\newcommand{\equals}{\!=\!}
+\newcommand{\great}{\!>\!}
+
+% Sub-equations
+\newcommand{\subeq}[1]{\begin{subequations}#1\end{subequations}}
+
+% Colours
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+\newcommand{\gray}[1]{{\color{gray}{#1}}}
+\newcommand{\white}[1]{{\color{white}{#1}}}
+
+% FLAG
+\newcommand{\FLAG}{\red{FLAG}~}
+% Dummy figure
+\newcommand{\dummyfig}[1]{
+  \centering
+  \fbox{
+    \begin{minipage}[c][0.33\textheight][c]{0.5\textwidth}
+      \centering{#1}
+    \end{minipage}
+  }
+}
+%%% This part makes a figure
+%\begin{figure}
+%  \dummyfig{Dummy Figure Label} 
+%  \caption{Dummy figure caption}
+%  \label{fig:dummy}
+%\end{figure}
