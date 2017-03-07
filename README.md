@@ -16,3 +16,6 @@ These include:
 * BMC -- http://www.springeropen.com/authors/tex
 
 * Springer -- http://www.springeropen.com/authors/tex
+
+
+I have also included the University of Manchester PhD thesis template, which I used for my 2015 PhD thesis.
