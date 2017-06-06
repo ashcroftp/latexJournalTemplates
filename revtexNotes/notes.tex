@@ -1,0 +1,76 @@
+\documentclass[onecolumn,amsmath,amssymb,11pt,a4paper,nofootinbib,showkeys,aps,rmp,superscriptaddress]{revtex4-1}
+
+\usepackage[a4paper,scale=0.8,top=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=blue,citecolor=blue,backref=false]{hyperref}
+\usepackage{xcolor}
+
+%--------------------------------------------
+%--- Custom commands-------------------------
+
+%\include{preamble.tex}
+
+%--------------------------------------------
+
+\begin{document}
+
+\title{Title}
+\author{Peter Ashcroft}
+\affiliation{Institut f\"ur Integrative Biologie, ETH Z\"urich}
+\email{peter.ashcroft@env.ethz.ch}
+
+\date{\today}
+
+\maketitle
+
+
+%%-------------------------------------------------------------%%
+%%-------------------------------------------------------------%%
+%%-------------------------------------------------------------%%
+\section{Section}
+\label{sec:}
+
+%%-------------------------------------------------------------%%
+%%-------------------------------------------------------------%%
+\subsection*{Sub-section}
+\label{sec:sec:}
+
+%%-------------------------------------------------------------%%
+\subsubsection*{Sub-sub-section}
+\label{sec:sec:sec:}
+
+
+% Bibliography
+\bibliography{bib}
+
+
+
+%%-------------------------------------------------------------%%
+%%----------------------Supplement-----------------------------%%
+%%-------------------------------------------------------------%%
+\widetext
+\clearpage
+
+\begin{center}
+\textbf{\large Supplemental Material}
+\end{center}
+%% Prefix a ``S'' to all equations, figures, tables and reset the counter %%
+\setcounter{section}{0}
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+%\setcounter{page}{1}
+\makeatletter
+\renewcommand{\thesection}{S.\Roman{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\bibnumfmt}[1]{[S#1]}
+\renewcommand{\citenumfont}[1]{S#1}
+
+
+
+
+\end{document}

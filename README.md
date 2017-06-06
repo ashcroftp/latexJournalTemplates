@@ -20,6 +20,8 @@ These include:
 
 I have also included the [University of Manchester PhD thesis template](https://github.com/ashcroftp/latexJournalTemplates/tree/master/UoMthesis), which I used for my 2015 PhD thesis.
 
+There is also my default note-writing/manuscript drafting [template](https://github.com/ashcroftp/latexJournalTemplates/tree/master/revtexNotes).
+This, however, requires the *revtex* package from APS.
 
 Finally, I have included some useful latex [documents/shortcuts](https://github.com/ashcroftp/latexJournalTemplates/tree/master/zz-other).
 These include:
