@@ -12,6 +12,7 @@ These include:
 
 * [PLoS](https://github.com/ashcroftp/latexJournalTemplates/tree/master/plos) -- http://journals.plos.org/plosone/s/latex
 	+ General submission template for all PLoS journals
+	+ Custom-made supporting information template
 
 * [BMC](https://github.com/ashcroftp/latexJournalTemplates/tree/master/bmc) -- http://www.springeropen.com/authors/tex
 
