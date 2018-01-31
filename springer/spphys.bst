@@ -1060,6 +1060,7 @@ FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
   add.comma
+  format.title "title" output.check
   crossref missing$
     {
       journal
