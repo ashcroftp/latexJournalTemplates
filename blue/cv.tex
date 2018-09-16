@@ -1,0 +1,53 @@
+% CV template
+% Author: Peter Ashcroft, ETH Zurich
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{blue}
+
+
+% Personal data
+\name{firstName LastName}
+\title{My name}
+\subtitle{Curriculum vit\ae}
+\address{Department}{Institute}{Street address}
+\phone{phone no.}
+\email{email address}
+\homepage{web address}
+
+\begin{document}
+\maketitlebox
+
+\cvsection[0ex]{Personal details}
+\cvitem{Nationality}{British}
+\cvitem{Date of birth}{dd/mm/yyyy}
+
+\cvsection{Research experience}
+\cventry{From -- To}{Position}{Institute}{Details}{Interests}
+
+\cvsection{Education}
+\cventry{From -- To}{Degree}{Institute}{Details}{More details}
+
+\cvsection{Awards}
+\cvlistitem{Award details}
+
+\cvsection{Publications}
+\cvlistitem{\mypub{Title}{Author(s)}{Journal}{Volume}{Pages}{Year}}
+
+\cvsection{Invited talks}
+\cvlistitem{Talk details}
+
+\cvsection{Teaching and supervision}
+\cventry{From--To}{Role}{Institute}{}{Details}
+
+\cvsection{Administrative duties}
+\cvlistitem{Reviewer for...}
+
+\cvsection{Skills and interests}
+\cvlistitem{Some skill}
+\cvlistdoubleitem{Skill 1}{Skill 2}
+
+\cvsection{References}
+\cventry{}{Reference}{}{Institute}{\emailsymbol~email\hspace{2em}\phonesymbol~phone no.}
+%References available upon request.
+
+\end{document}
