@@ -3,12 +3,11 @@
 % Author: Peter Ashcroft, ETH Zurich
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{blue}[2018/09/13 Style file for my blue report format]
+\ProvidesPackage{blueReport}[2018/09/13 Style file for my blue report format]
 
 %------------------------
 %% Required packages
 %------------------------
-
 % Adjust the page margins with geometry
 \RequirePackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 % Colour
@@ -31,26 +30,75 @@
 \ProcessOptions\relax
 
 %------------------------
-%% Style definitions
+%% Elements to be defined
 %------------------------
-% Sans-serif font
-\renewcommand{\familydefault}{\sfdefault}
-% Colours
+\newcommand*{\name}[1]{\def\@name{#1}}
+\renewcommand*{\title}[1]{\def\@title{#1}}
+\newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
+\newcommand*{\address}[3]{\def\@addressone{#1}\def\@addresstwo{#2}\def\@addressthree{#3}}
+\newcommand*{\phone}[1]{\def\@phone{#1}}
+\newcommand*{\email}[1]{\def\@email{#1}}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+
+%------------------------
+%% Colours
+%------------------------
 \definecolor{color0}{rgb}{0,0,0} % black
 \definecolor{color1}{rgb}{0.22,0.45,0.70} % light blue
 \definecolor{color2}{rgb}{0.45,0.45,0.45} % dark grey
+
+%------------------------
+%% Symbols used in the doc
+%------------------------
+\newcommand*{\marvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
+\newcommand*{\phonesymbol}{\textcolor{color2}{\marvosymbol{84}}~}
+\newcommand*{\emailsymbol}{\textcolor{color2}{\marvosymbol{66}}~}
+\newcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+\newcommand*{\point}{\textcolor{color1}{\marvosymbol{123}~}}
+
+%------------------------
+%% Some length definitions
+%------------------------
+\setlength{\parindent}{0pt}
+% Width of year column and section heading bar
+\newlength{\sidecolumnwidth}
+\setlength{\sidecolumnwidth}{0.125\textwidth}
+% Column separator and separator between section bar and heading
+\newlength{\separatorcolumnwidth}
+\setlength{\separatorcolumnwidth}{0.02\textwidth}
+% Width of text after the side column
+\newlength{\maincolumnwidth}
+\setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\sidecolumnwidth}
+% Half text width for split bullet points
+\newlength{\halfwidth}
+\setlength{\halfwidth}{0.5\maincolumnwidth}
+% Width of bullet point
+\newlength{\pointwidth}
+\settowidth{\pointwidth}{\point}
+% Width of text after bullet point
+\newlength{\listitemwidth}
+\setlength{\listitemwidth}{\maincolumnwidth-\pointwidth}
+%------------------------
+%% Text style definitions
+%------------------------
+% Sans-serif font
+\renewcommand{\familydefault}{\sfdefault}
+% Default text style
 \normalfont\color{color0}
-
-% Title, section, subsection, etc. fonts
-\titleformat{\section}[hang]{\LARGE\color{color1}}{\parbox[t]{0.1\textwidth}{\raisebox{0.1em}{\color{color1}\rule{0.1\textwidth}{0.5ex}}}~~\thesection.}{0.5em}{}
-\titleformat{name=\section,numberless}[hang]{\LARGE\color{color1}}{\parbox[t]{0.1\textwidth}{\raisebox{0.2em}{\color{color1}\rule{0.1\textwidth}{0.5ex}}}~~}{0.5em}{}
-\titleformat*{\subsection}{\Large\color{color1}}
-\titleformat*{\subsubsection}{\large\color{color2}}
-
-% Custom styles for title, name, and address
+% Define section font separately
+\newcommand*{\sectionfont}{\LARGE\color{color1}}
+% Custom styles for title, subtitle, and address/contact details
 \newcommand{\titlestyle}[1]{{\Huge\mdseries\upshape\color{color0}{#1}}}
 \newcommand{\subtitlestyle}[1]{{\LARGE\upshape\color{color2}{#1}}}
 \newcommand{\addressstyle}[1]{{\small\upshape\color{color2}{#1}}}
+% Bar that comes before sections
+\newcommand*{\sectionbar}{\raisebox{0.4ex}{\color{color1}\rule{\sidecolumnwidth}{0.5ex}}}
+% Title, section, subsection, etc. styles
+%\titleformat{\section}[hang]{\sectionfont}{\parbox[t]{\sectionbarwidth}{\raisebox{0.1em}{\sectionbar}}\hspace{\separatorcolumnwidth}\thesection.}{0.5em}{}
+\titleformat{\section}[hang]{\sectionfont}{\sectionbar\hspace{\separatorcolumnwidth}\thesection.}{0.5em}{}
+\titleformat{name=\section,numberless}[hang]{\sectionfont}{\sectionbar\hspace{\separatorcolumnwidth}}{0em}{}
+\titleformat*{\subsection}{\Large\color{color1}}
+\titleformat*{\subsubsection}{\large\color{color2}}
 
 % Title box style
 \newcommand{\maketitlebox}{%
@@ -85,20 +133,58 @@
 	\usebox{\authorbox}%
 }%
 
-% Elements
-\newcommand*{\name}[1]{\def\@name{#1}}
-\renewcommand*{\title}[1]{\def\@title{#1}}
-\newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
-\newcommand*{\address}[3]{\def\@addressone{#1}\def\@addresstwo{#2}\def\@addressthree{#3}}
-\newcommand*{\phone}[1]{\def\@phone{#1}}
-\newcommand*{\email}[1]{\def\@email{#1}}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+%------------------------
+%% CV elements
+%------------------------
+% \cvsection{heading}
+\newcommand*{\cvsection}[2][2.5ex]{%
+	\par\addvspace{#1}%
+	\sectionbar%
+	\hspace{\separatorcolumnwidth}%
+	{\sectionfont#2}%
+	\par\nobreak\addvspace{1ex}\@afterheading% to avoid a pagebreak after the heading
+}
 
-% Symbols
-\newcommand*{\marvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
-\newcommand*{\phonesymbol}{\marvosymbol{72}~}
-\newcommand*{\emailsymbol}{\marvosymbol{66}~}
-\newcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+% \cvitem{label}{text}
+\newcommand*{\cvitem}[2]{%
+  \begin{tabular}{@{}p{\sidecolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft#1 &{#2}%
+  \end{tabular}%
+  \par\addvspace{0.25em}
+}
 
+% \cventry{years}{degree/job title}{institution/employer}{details}{small details}
+\newcommand*{\cventry}[5]{%
+  \cvitem{#1}{%
+    {\bfseries#2}%
+    \ifthenelse{\equal{#3}{}}{}{~#3}%
+    \ifthenelse{\equal{#4}{}}{}{\newline#4}%
+    \strut%
+    \ifx&#5&%
+    \else{\newline\small#5}\fi%
+  }
+}
+
+% \cvlistitem{text}
+\newcommand*{\cvlistitem}[1]{\cvitem{}{\point\begin{minipage}[t]{\listitemwidth}#1\end{minipage}}}%
+
+% \cvlistdoubleitem{text1}{text2}
+\newcommand*{\cvlistdoubleitem}[2]{%
+  \cvitem{}{
+		\point\begin{minipage}[t]{\halfwidth}#1\end{minipage}%
+  	\hfill%
+  	{\point\begin{minipage}[t]{\halfwidth}#2\end{minipage}}%
+	}
+}
+
+% \mypub{title}{authors}{journal}{volume}{page}{year}
+\newcommand*{\mypub}[6]{%
+	{\slshape#1.}\newline
+	#2,~
+	#3~
+	\ifthenelse{\equal{#4}{}}{}{{\bfseries#4},~}
+	\ifthenelse{\equal{#5}{}}{}{#5~}
+	(#6).
+}
 
 \endinput
