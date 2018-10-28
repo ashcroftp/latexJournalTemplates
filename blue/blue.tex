@@ -2,7 +2,7 @@
 % Author: Peter Ashcroft, ETH Zurich
 
 \documentclass[a4paper,11pt]{article}
-\usepackage{blueReport}
+\usepackage{blue}
 
 % Personal data
 \name{Peter Ashcroft}
@@ -12,7 +12,7 @@
 \phone{+41~(0)44~633~60~34}
 \email{peter.ashcroft@env.ethz.ch}
 \homepage{ashcroftp.github.io}
-
+\header{Header}
 
 \begin{document}
 \maketitlebox
@@ -29,12 +29,14 @@ Hello
 \subsection{Schedule and milestones}
 \subsection{Relevance and impact}
 
+\clearpage
+
 \section{Bibliography}
 
-\begingroup
-	\renewcommand{\section}[2]{}%
-	\bibliographystyle{plain}
-	\bibliography{bib}
-\endgroup
+%\begingroup
+%	\renewcommand{\section}[2]{}%
+%	\bibliographystyle{merlin}
+%	\bibliography{bib}
+%\endgroup
 
 \end{document}
